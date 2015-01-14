@@ -1,37 +1,37 @@
 FORMAT: 1A
 
-# Notes API
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+# La Testa API
+La Testa API is an example API connected as GH <-> Apiary.
 
-# Group Notes
-Notes related resources of the **Notes API**
+# Group Everything
+There is a lot of stuff inhere.
 
-## Notes Collection [/notes]
-### List all Notes [GET]
+## Various things [/things]
+### List all the things [GET]
 + Response 200 (application/json)
 
         [{
-          "id": 1, "title": "Jogging in park"
+          "id": 1, "name": "Tree"
         }, {
-          "id": 2, "title": "Pick-up posters from post-office"
+          "id": 2, "name": "Castle"
         }]
 
-### Create a Note [POST]
+### Create a thing [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        { "name": "Butter" }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        { "id": 3, "name": "Butter" }
 
-## Note [/notes/{id}]
-A single Note object with all its details
+## One thing [/notes/{id}]
+A single thing to read about
 
 + Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
+    + id (required, number, `1`) ... Numeric `id` of the thing
 
-### Retrieve a Note [GET]
+### Show me one thing [GET]
 + Response 200 (application/json)
 
     + Header
@@ -40,7 +40,4 @@ A single Note object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
-
-### Remove a Note [DELETE]
-+ Response 204
+            { "id": 2, "name": "Castle" }
