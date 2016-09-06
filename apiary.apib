@@ -1,43 +1,34 @@
 FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
 
-# La Testa API
-La Testa API is an example API connected as GitHub <=> Apiary.
+# Ou je
 
-# Group Everything
-There is a lot of stuff inhere.
+Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Various things [/things]
-### List all the things [GET]
+## Questions Collection [/questions]
+
+### List All Questions [GET]
+
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "name": "Tree"
-        }, {
-          "id": 2, "name": "Castle"
-        }]
-
-### Create a thing [POST]
-+ Request (application/json)
-
-        { "name": "Butter" }
-
-+ Response 201 (application/json)
-
-        { "id": 3, "name": "Butter" }
-
-## One thing [/notes/{id}]
-A single thing to read about
-
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the thing
-
-### Show me one thing [GET]
-+ Response 200 (application/json)
-
-    + Header
-
-            X-My-Header: The Value
-
-    + Body
-
-            { "id": 2, "name": "Castle" }
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
